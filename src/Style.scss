@@ -1,0 +1,259 @@
+@font-face{
+    src : url('fonts/ProximaNova-Regular.otf');
+    font-family: 'ProximaNova Regular';
+}
+@font-face{
+    src : url('fonts/Proxima\ Nova\ Black.otf');
+    font-family: 'ProximaNova Black';
+}
+@font-face{
+    src : url('fonts/Proxima\ Nova\ Bold.otf');
+    font-family: 'ProximaNova Bold';
+}
+@font-face{
+    src : url('fonts/ProximaNovaThin.otf');
+    font-family: 'ProximaNova Thin';
+}
+
+/* Colors */
+$red: #FF0000;
+$grey: #B2B2B2;
+$deepGrey: #070606;
+
+/* Mixins */
+
+
+
+
+
+body{
+    font-family: 'ProximaNova Regular';
+    overflow-x: hidden;
+}
+@mixin button(){ // start of @mixin button()
+    background: $red;
+    border: none;
+    outline: none;
+    padding: 0.8em 1.8em;
+    color: white;
+    cursor: pointer;
+    font-family: 'ProximaNova Regular';
+    text-transform: uppercase;
+} // end of @mixin button()
+
+.navbar{
+    display: flex;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
+    padding: 2em 10em;
+    .logo{
+        display: inline-block;
+    }
+    .account-info{
+        display: inline-block;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: $grey;
+        .watchlist{
+            background: $red;
+            color: white;
+            display: inline-block;
+            border-radius: 50%;
+            font-size: 12px;
+            text-align: center;
+            height: 30px;
+            width: 30px;
+            font-family: 'ProximaNova Thin';
+            margin-left: .5em;
+            margin-top: -15px;
+            span{
+                display: block;
+                margin-top: 7px;
+                margin-left: -1px;
+            }
+        } // End of .watchlist
+        button {
+            @include button();
+            font-size: '14px';
+            margin-left: 2em;
+        } // end of button
+    } // end of .account-info
+}// end of .navbar
+
+.main-header{
+    background: black;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    padding: 8em 2em 10em 2em;
+    h1{
+        font-family: 'ProximaNova Black';
+        font-size: 3.5em;
+    }
+    button{
+        @include button();
+        font-size: '26px' !important;
+        margin-top: -1em;
+    }
+
+    .landing-carousel{
+        width: 80%;
+        margin: auto;
+        margin-top: 2em;
+        overflow: hidden;
+        display: flex;
+
+        .item{
+            position: absolute;
+            // margin-left: 1em;
+             $duration: 2s;
+
+            &:first-child{
+                animation: item-animation 25s linear infinite;
+            }
+            &:nth-child(2){
+                animation: item-animation 25s linear infinite 3s;
+            }
+            &:nth-child(3){
+                animation: item-animation 25s linear infinite 6s;
+            }
+            &:nth-child(4){
+                animation: item-animation 25s linear infinite 9s;
+            }
+            &:nth-child(5){
+                animation: item-animation 25s linear infinite 12s;
+            }
+            &:nth-child(6){
+                animation: item-animation 25s linear infinite 15s;
+            }
+            &:last-child{
+                animation: item-animation 25s linear infinite 18s;
+                
+            }
+
+        }
+    }
+}
+
+.dashboard-header {
+    @extend .main-header ;
+    height: auto;
+
+}
+
+@keyframes item-animation{
+    0%{
+        transform: translateX(700%);
+    }
+    100%{
+        transform: translateX(-450%);
+    }
+}
+
+.movies{
+    background: $deepGrey;
+    padding: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .movie{
+        display: flex;
+        margin-top: 2em;
+        .poster{
+            background: $grey;
+            width: 500px;
+        
+            display: inline-block;
+
+        } // end of .poster
+        .info{
+            max-width: 450px;
+            padding-left: 2em;
+            display: inline-block;
+            color: white;
+            .title{
+                font-size: 1.5em;
+                font-family: 'ProximaNova Bold';
+            }
+            .description{
+                font-family: 'ProximaNova Thin';
+                line-height: '16px';
+            }
+            button{
+                @include button();
+                margin-top: 1em;
+            }
+        }// end of .info
+    }// end of .movie
+}// end of .movies
+
+
+/* Login form */
+
+.login-area{
+    background: black;
+    height: 100vh;
+    width: 100%;
+    padding-top: 3%;
+    overflow: hidden;
+
+    .logo{
+        text-align: center;
+        padding: 2em;
+    }
+
+    .inner{
+        max-width: 450px;
+        margin: auto;
+        background : $deepGrey;
+        border-radius: 10px;
+        color: $grey;
+        padding: 3em;
+        h3{
+            font-size: 2em;
+            color: white;
+            line-height: 0;
+            font-family: "ProximaNova Regular";
+            margin-top: 1em;
+        }
+        form {
+            margin-top: -0.5em;
+        }
+        input{
+            border: none;
+            background: none;
+            color: $grey;
+            padding: 1em 0 0.5em 0;
+            font-family: 'ProximaNova Thin';
+            font-size: 1em;
+            border-bottom: 1px solid grey;
+            width: 100%;
+            margin-top: 1em;
+            outline: none;
+        }
+        button{
+            @include button();
+            margin-top: 2em;
+            width: 100%;
+        }
+
+        footer{
+            font-size: 0.8em;
+            font-family: "ProximaNova Thin";
+            margin-top: 2em;
+            text-align: center;
+            a{
+                color: $red;
+                text-decoration: none;
+                transition: letter-spacing 0.5s;
+                &:hover{
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+}

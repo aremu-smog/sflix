@@ -1,0 +1,18 @@
+{
+    "users" : [
+        {
+            "firstname": "Aremu",
+            "lastname": "Smog",
+            "email": "aremuoluwagbamila@gmail.com",
+            "username": "aremu_smog",
+            "password" : "Smogtechng/17"
+        },
+        {
+            "firstname": "Aromkeye",
+            "lastname": "Oluwatoyin",
+            "email": "aromkey@gmail.com",
+            "username": "toyintomato",
+            "password" : "Smogtechng/17"
+        }
+    ]
+}

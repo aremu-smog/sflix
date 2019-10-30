@@ -1,0 +1,325 @@
+@font-face {
+  src: url("fonts/ProximaNova-Regular.otf");
+  font-family: 'ProximaNova Regular';
+}
+
+@font-face {
+  src: url("fonts/Proxima Nova Black.otf");
+  font-family: 'ProximaNova Black';
+}
+
+@font-face {
+  src: url("fonts/Proxima Nova Bold.otf");
+  font-family: 'ProximaNova Bold';
+}
+
+@font-face {
+  src: url("fonts/ProximaNovaThin.otf");
+  font-family: 'ProximaNova Thin';
+}
+
+/* Colors */
+/* Mixins */
+body {
+  font-family: 'ProximaNova Regular';
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: black;
+  padding: 2em 10em;
+}
+
+.navbar .logo {
+  display: inline-block;
+}
+
+.navbar .account-info {
+  display: inline-block;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #B2B2B2;
+}
+
+.navbar .account-info .watchlist {
+  background: #FF0000;
+  color: white;
+  display: inline-block;
+  border-radius: 50%;
+  font-size: 12px;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  font-family: 'ProximaNova Thin';
+  margin-left: .5em;
+  margin-top: -15px;
+}
+
+.navbar .account-info .watchlist span {
+  display: block;
+  margin-top: 7px;
+  margin-left: -1px;
+}
+
+.navbar .account-info button {
+  background: #FF0000;
+  border: none;
+  outline: none;
+  padding: 0.8em 1.8em;
+  color: white;
+  cursor: pointer;
+  font-family: 'ProximaNova Regular';
+  text-transform: uppercase;
+  font-size: '14px';
+  margin-left: 2em;
+}
+
+.main-header, .dashboard-header {
+  background: black;
+  text-align: center;
+  color: white;
+  height: 100vh;
+  padding: 8em 2em 10em 2em;
+}
+
+.main-header h1, .dashboard-header h1 {
+  font-family: 'ProximaNova Black';
+  font-size: 3.5em;
+}
+
+.main-header button, .dashboard-header button {
+  background: #FF0000;
+  border: none;
+  outline: none;
+  padding: 0.8em 1.8em;
+  color: white;
+  cursor: pointer;
+  font-family: 'ProximaNova Regular';
+  text-transform: uppercase;
+  font-size: '26px' !important;
+  margin-top: -1em;
+}
+
+.main-header .landing-carousel, .dashboard-header .landing-carousel {
+  width: 80%;
+  margin: auto;
+  margin-top: 2em;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-header .landing-carousel .item, .dashboard-header .landing-carousel .item {
+  position: absolute;
+}
+
+.main-header .landing-carousel .item:first-child, .dashboard-header .landing-carousel .item:first-child {
+  -webkit-animation: item-animation 25s linear infinite;
+          animation: item-animation 25s linear infinite;
+}
+
+.main-header .landing-carousel .item:nth-child(2), .dashboard-header .landing-carousel .item:nth-child(2) {
+  -webkit-animation: item-animation 25s linear infinite 3s;
+          animation: item-animation 25s linear infinite 3s;
+}
+
+.main-header .landing-carousel .item:nth-child(3), .dashboard-header .landing-carousel .item:nth-child(3) {
+  -webkit-animation: item-animation 25s linear infinite 6s;
+          animation: item-animation 25s linear infinite 6s;
+}
+
+.main-header .landing-carousel .item:nth-child(4), .dashboard-header .landing-carousel .item:nth-child(4) {
+  -webkit-animation: item-animation 25s linear infinite 9s;
+          animation: item-animation 25s linear infinite 9s;
+}
+
+.main-header .landing-carousel .item:nth-child(5), .dashboard-header .landing-carousel .item:nth-child(5) {
+  -webkit-animation: item-animation 25s linear infinite 12s;
+          animation: item-animation 25s linear infinite 12s;
+}
+
+.main-header .landing-carousel .item:nth-child(6), .dashboard-header .landing-carousel .item:nth-child(6) {
+  -webkit-animation: item-animation 25s linear infinite 15s;
+          animation: item-animation 25s linear infinite 15s;
+}
+
+.main-header .landing-carousel .item:last-child, .dashboard-header .landing-carousel .item:last-child {
+  -webkit-animation: item-animation 25s linear infinite 18s;
+          animation: item-animation 25s linear infinite 18s;
+}
+
+.dashboard-header {
+  height: auto;
+}
+
+@-webkit-keyframes item-animation {
+  0% {
+    -webkit-transform: translateX(700%);
+            transform: translateX(700%);
+  }
+  100% {
+    -webkit-transform: translateX(-450%);
+            transform: translateX(-450%);
+  }
+}
+
+@keyframes item-animation {
+  0% {
+    -webkit-transform: translateX(700%);
+            transform: translateX(700%);
+  }
+  100% {
+    -webkit-transform: translateX(-450%);
+            transform: translateX(-450%);
+  }
+}
+
+.movies {
+  background: #070606;
+  padding: 5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.movies .movie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2em;
+}
+
+.movies .movie .poster {
+  background: #B2B2B2;
+  width: 500px;
+  display: inline-block;
+}
+
+.movies .movie .info {
+  max-width: 450px;
+  padding-left: 2em;
+  display: inline-block;
+  color: white;
+}
+
+.movies .movie .info .title {
+  font-size: 1.5em;
+  font-family: 'ProximaNova Bold';
+}
+
+.movies .movie .info .description {
+  font-family: 'ProximaNova Thin';
+  line-height: '16px';
+}
+
+.movies .movie .info button {
+  background: #FF0000;
+  border: none;
+  outline: none;
+  padding: 0.8em 1.8em;
+  color: white;
+  cursor: pointer;
+  font-family: 'ProximaNova Regular';
+  text-transform: uppercase;
+  margin-top: 1em;
+}
+
+/* Login form */
+.login-area {
+  background: black;
+  height: 100vh;
+  width: 100%;
+  padding-top: 3%;
+  overflow: hidden;
+}
+
+.login-area .logo {
+  text-align: center;
+  padding: 2em;
+}
+
+.login-area .inner {
+  max-width: 450px;
+  margin: auto;
+  background: #070606;
+  border-radius: 10px;
+  color: #B2B2B2;
+  padding: 3em;
+}
+
+.login-area .inner h3 {
+  font-size: 2em;
+  color: white;
+  line-height: 0;
+  font-family: "ProximaNova Regular";
+  margin-top: 1em;
+}
+
+.login-area .inner form {
+  margin-top: -0.5em;
+}
+
+.login-area .inner input {
+  border: none;
+  background: none;
+  color: #B2B2B2;
+  padding: 1em 0 0.5em 0;
+  font-family: 'ProximaNova Thin';
+  font-size: 1em;
+  border-bottom: 1px solid grey;
+  width: 100%;
+  margin-top: 1em;
+  outline: none;
+}
+
+.login-area .inner button {
+  background: #FF0000;
+  border: none;
+  outline: none;
+  padding: 0.8em 1.8em;
+  color: white;
+  cursor: pointer;
+  font-family: 'ProximaNova Regular';
+  text-transform: uppercase;
+  margin-top: 2em;
+  width: 100%;
+}
+
+.login-area .inner footer {
+  font-size: 0.8em;
+  font-family: "ProximaNova Thin";
+  margin-top: 2em;
+  text-align: center;
+}
+
+.login-area .inner footer a {
+  color: #FF0000;
+  text-decoration: none;
+  -webkit-transition: letter-spacing 0.5s;
+  transition: letter-spacing 0.5s;
+}
+
+.login-area .inner footer a:hover {
+  letter-spacing: 1px;
+}
+/*# sourceMappingURL=Style.css.map */
