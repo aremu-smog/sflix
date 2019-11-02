@@ -34,11 +34,11 @@ body{
     background: $red;
     border: none;
     outline: none;
-    padding: 0.8em 1.8em;
+    padding: 1em 2em;
     color: white;
     cursor: pointer;
     font-family: 'ProximaNova Regular';
-    text-transform: uppercase;
+    // text-transform: uppercase;
 } // end of @mixin button()
 
 .navbar{
@@ -87,22 +87,26 @@ body{
     background: black;
     text-align: center;
     color: white;
-    height: 100vh;
-    padding: 8em 2em 10em 2em;
+    padding: 4em 2em 0em 2em;
+    height: calc(100vh - 101px);
     h1{
         font-family: 'ProximaNova Black';
         font-size: 3.5em;
     }
     button{
         @include button();
-        font-size: '26px' !important;
-        margin-top: -1em;
+        font-size: 14px !important;
+        padding: 1em 3em;
+        letter-spacing: 1px;
+        display: block;
+        margin: auto;
+        margin-top: -2em;
     }
 
     .landing-carousel{
         width: 80%;
         margin: auto;
-        margin-top: 2em;
+        margin-top: 4em;
         overflow: hidden;
         display: flex;
 
@@ -141,6 +145,7 @@ body{
 .dashboard-header {
     @extend .main-header ;
     height: auto;
+    padding-bottom: 8em;
 
 }
 
@@ -162,26 +167,26 @@ body{
     
     .movie{
         display: flex;
-        margin-top: 2em;
+        margin-top: 3em;
         .poster{
             background: $grey;
-            width: 500px;
+            width: 400px;
         
             display: inline-block;
 
         } // end of .poster
         .info{
-            max-width: 450px;
+            max-width: 350px;
             padding-left: 2em;
             display: inline-block;
             color: white;
             .title{
                 font-size: 1.5em;
-                font-family: 'ProximaNova Bold';
+                font-family: 'ProximaNova Black';
             }
             .description{
                 font-family: 'ProximaNova Thin';
-                line-height: '16px';
+                line-height: 24px !important;
             }
             button{
                 @include button();
@@ -207,7 +212,7 @@ body{
     }
 
     .inner{
-        max-width: 450px;
+        max-width: 400px;
         margin: auto;
         background : $deepGrey;
         border-radius: 10px;

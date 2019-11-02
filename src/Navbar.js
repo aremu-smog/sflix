@@ -1,5 +1,5 @@
 import React,{useContext} from 'react'
-import {Redirect, Link, BrowserRouter as Router} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 import {WatchlistContext} from './Contexts/WatchlistContext'
 import {UserContext} from './Contexts/UserContext'
 
@@ -21,9 +21,9 @@ const Navbar = () =>{
                     
                     <div className="account-info">
                     
-                    WATCHLIST
-                    <span className="watchlist"><span>{watchlist.length}</span></span>
-                    <Link to="/signin"><button>Log in Now</button></Link>
+                    {/* WATCHLIST
+                    <span className="watchlist"><span>{watchlist.length}</span></span> */}
+                    <Link to="/signin"><button>Sign in to your Account</button></Link>
                     </div>
     
             </nav>

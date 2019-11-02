@@ -77,11 +77,10 @@ body {
   background: #FF0000;
   border: none;
   outline: none;
-  padding: 0.8em 1.8em;
+  padding: 1em 2em;
   color: white;
   cursor: pointer;
   font-family: 'ProximaNova Regular';
-  text-transform: uppercase;
   font-size: '14px';
   margin-left: 2em;
 }
@@ -90,8 +89,8 @@ body {
   background: black;
   text-align: center;
   color: white;
-  height: 100vh;
-  padding: 8em 2em 10em 2em;
+  padding: 4em 2em 0em 2em;
+  height: calc(100vh - 101px);
 }
 
 .main-header h1, .dashboard-header h1 {
@@ -103,19 +102,22 @@ body {
   background: #FF0000;
   border: none;
   outline: none;
-  padding: 0.8em 1.8em;
+  padding: 1em 2em;
   color: white;
   cursor: pointer;
   font-family: 'ProximaNova Regular';
-  text-transform: uppercase;
-  font-size: '26px' !important;
-  margin-top: -1em;
+  font-size: 14px !important;
+  padding: 1em 3em;
+  letter-spacing: 1px;
+  display: block;
+  margin: auto;
+  margin-top: -2em;
 }
 
 .main-header .landing-carousel, .dashboard-header .landing-carousel {
   width: 80%;
   margin: auto;
-  margin-top: 2em;
+  margin-top: 4em;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -163,6 +165,7 @@ body {
 
 .dashboard-header {
   height: auto;
+  padding-bottom: 8em;
 }
 
 @-webkit-keyframes item-animation {
@@ -206,17 +209,17 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 2em;
+  margin-top: 3em;
 }
 
 .movies .movie .poster {
   background: #B2B2B2;
-  width: 500px;
+  width: 400px;
   display: inline-block;
 }
 
 .movies .movie .info {
-  max-width: 450px;
+  max-width: 350px;
   padding-left: 2em;
   display: inline-block;
   color: white;
@@ -224,23 +227,22 @@ body {
 
 .movies .movie .info .title {
   font-size: 1.5em;
-  font-family: 'ProximaNova Bold';
+  font-family: 'ProximaNova Black';
 }
 
 .movies .movie .info .description {
   font-family: 'ProximaNova Thin';
-  line-height: '16px';
+  line-height: 24px !important;
 }
 
 .movies .movie .info button {
   background: #FF0000;
   border: none;
   outline: none;
-  padding: 0.8em 1.8em;
+  padding: 1em 2em;
   color: white;
   cursor: pointer;
   font-family: 'ProximaNova Regular';
-  text-transform: uppercase;
   margin-top: 1em;
 }
 
@@ -259,7 +261,7 @@ body {
 }
 
 .login-area .inner {
-  max-width: 450px;
+  max-width: 400px;
   margin: auto;
   background: #070606;
   border-radius: 10px;
@@ -296,11 +298,10 @@ body {
   background: #FF0000;
   border: none;
   outline: none;
-  padding: 0.8em 1.8em;
+  padding: 1em 2em;
   color: white;
   cursor: pointer;
   font-family: 'ProximaNova Regular';
-  text-transform: uppercase;
   margin-top: 2em;
   width: 100%;
 }
