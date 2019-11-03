@@ -100,37 +100,43 @@ body{
     }
 
     .landing-carousel{
-        width: 80%;
         margin: auto;
         margin-top: 2em;
-        overflow: hidden;
         display: flex;
+        position: relative;
+    
 
         .item{
             position: absolute;
+            transform: translateX(1000%);
+    
             // margin-left: 1em;
              $duration: 2s;
 
             &:first-child{
-                animation: item-animation 25s linear infinite;
+                animation: item-animation 24s linear infinite;
             }
             &:nth-child(2){
-                animation: item-animation 25s linear infinite 3s;
+                animation: item-animation 24s linear infinite 3s;
             }
             &:nth-child(3){
-                animation: item-animation 25s linear infinite 6s;
+                animation: item-animation 24s linear infinite 6s;
             }
             &:nth-child(4){
-                animation: item-animation 25s linear infinite 9s;
+                animation: item-animation 24s linear infinite 9s;
             }
             &:nth-child(5){
-                animation: item-animation 25s linear infinite 12s;
+                animation: item-animation 24s linear infinite 12s;
             }
             &:nth-child(6){
-                animation: item-animation 25s linear infinite 15s;
+                animation: item-animation 24s linear infinite 15s;
             }
-            &:last-child{
-                animation: item-animation 25s linear infinite 18s;
+            &:nth-child(7){
+                animation: item-animation 24s linear infinite 18s;
+                
+            }
+            &:nth-child(8){
+                animation: item-animation 24s linear infinite 21s;
                 
             }
 
@@ -146,7 +152,7 @@ body{
 
 @keyframes item-animation{
     0%{
-        transform: translateX(700%);
+        transform: translateX(800%);
     }
     100%{
         transform: translateX(-450%);
