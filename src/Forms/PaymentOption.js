@@ -7,26 +7,82 @@ import axios from 'axios'
 
 
 
-const SelectPackage = (props) =>{
+const PaymentOption = (props) =>{
 
     
     const [signup, setSignup] = props.value
     const [user, setUser] = useContext(UserContext)
 
-    const [formMail, setFormMail] = useState({value : ""})
-    const [formPassword, setFormPassword] = useState({value : ""})
+    const[cardType, setCardType] = useState({value : ""})
+    const [cardNumber, setCardNumber] = useState({value : ""})
+    const [cardDate, setCardDate] = useState({value : ""})
+    const [cardCvv, setCardCvv] = useState({value : ""})
+    const [cardPin, setCardPin] = useState({value : ""})
 
+    const isANumber = (val) =>{
+        let pattern = /[0-9]/
+        return pattern.test(val)
+    }
 
-    const handleMail = (e) => {
-        setFormMail({
+    const handleCardNumber = (e) => {
+        let theNumber = e.target.value
+
+        if(isANumber(theNumber)){
+            e.target.value = theNumber
+            if(theNumber[0] == 5 || theNumber[0] == 4 || theNumber[0] == 3){
+                setCardNumber({  value : e.target.value  })
+
+            if(e.target.value[0] == 5){
+                setCardType({
+                    value : "mastercard"
+                })
+            }else if(e.target.value[0] == 4){
+                setCardType({
+                    value : "visa"
+                })
+            }else if(e.target.value[0] == 3){
+                setCardType({
+                    value : "verve"
+                })
+            }
+            }
+            else{
+                setCardType({
+                    value : "error"
+                })
+            }
+        }else{
+            return null
+        }
+    }
+    const handleDate = (e) => {
+        let theDate = e.target.value
+        setCardDate({
             value : e.target.value
         })
+        
+        if(theDate.length == 2){
+            if(theDate.length == cardDate["value"].length + 1){
+                e.target.value = theDate + "/"
+            }
+        }
     }
-    const handlePassword = (e) => {
-        setFormPassword({
-            value : e.target.value
-        })
+    const handleCvv = (e) => {
+        if(isANumber(e.target.value)){
+            setCardCvv({
+                value : e.target.value
+            })
+        }
     }
+
+    const handlePin = (e) => {
+        if(isANumber(e.target.value)){
+            setCardPin({
+                value : e.target.value
+            })
+        }
+    }
+    
     const handleSignIn = (e) => {
 
         setSignup({
@@ -74,23 +130,53 @@ const SelectPackage = (props) =>{
         return( <Redirect to="/dashboard" />)
     }else{
 
+        
+
         return(
-            <div className="login-area">
-                <div className="wrapper">
-                    <div className="logo"><Link to="/"><img src="img/sflix.png" alt="SFLIX logo" width="120px" /></Link></div>
-                    <div className="inner">
-                    <h3>Select a Package</h3>
+        
+                    <div >
+                    <h3>Payment Info.</h3>
+                    <p>We won't charge you without your permission</p>
+
+                    <div className="logos">
+                        <img style={{opacity : cardType.value === "visa" ? "0.8":""}} src="img/form/visa.png" alt="visa logo" height="60px" />
+                        <img style={{opacity : cardType.value === "verve" ? "0.8":""}} src="img/form/verve.png" alt="verve logo" height="60px" />
+                        <img style={{opacity : cardType.value === "mastercard" ? "0.8":""}} src="img/form/mastercard.png" alt="mastercard logo" height="60px" />
+                    </div>
                         <form onSubmit={handleSignIn}>
-                            <input type="email" onChange={handleMail} placeholder="Your email address" />
-                            <input type="text" onChange={handleMail} placeholder="Your Fullname" />
-                            <input type="text" onChange={handleMail} placeholder="Your Username" />
-                            <input type="password" onChange={handlePassword} placeholder="Your password" />
-                            <button>Create account</button>
+                            
+                            <input 
+                            type="text"
+                            maxLength="16"
+                            onChange={handleCardNumber}
+                            className={cardType.value == "error" ?"error-input" : ""}
+                            placeholder="Your Card Number" />
+
+
+                            <div className="card-info">
+                                <input 
+                                
+                                type="text" onChange={handleDate}  
+                                maxlength="7" 
+                                placeholder="MM/YYYY"
+                                />
+                                <input
+                                type="password"
+                                onChange={handleCvv}
+                                maxLength="3"
+                                placeholder="CVV" />
+
+
+                                <input
+                                type="password"
+                                onChange={handlePin}
+                                maxLength="4"
+                                placeholder="PIN" />
+                            </div>
+                            <button>PROCEED</button>
                         </form>
                         <footer>Already have an account ? <Link to="/signin">Sign in here</Link></footer>
                     </div>
-                </div>
-            </div>
                 
         )
 
@@ -98,4 +184,4 @@ const SelectPackage = (props) =>{
     
 }
 
-export default SelectPackage
+export default PaymentOption

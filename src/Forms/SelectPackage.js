@@ -13,21 +13,9 @@ const SelectPackage = (props) =>{
     const [signup, setSignup] = props.value
     const [user, setUser] = useContext(UserContext)
 
-    const [formMail, setFormMail] = useState({value : ""})
-    const [formPassword, setFormPassword] = useState({value : ""})
 
-
-    const handleMail = (e) => {
-        setFormMail({
-            value : e.target.value
-        })
-    }
-    const handlePassword = (e) => {
-        setFormPassword({
-            value : e.target.value
-        })
-    }
-    const handleSignIn = (e) => {
+    
+    const choosePackage = (e) => {
 
         setSignup({
             step : signup.step + 1
@@ -75,22 +63,44 @@ const SelectPackage = (props) =>{
     }else{
 
         return(
-            <div className="login-area">
-                <div className="wrapper">
-                    <div className="logo"><Link to="/"><img src="img/sflix.png" alt="SFLIX logo" width="120px" /></Link></div>
-                    <div className="inner">
+            
+                    <div>
                     <h3>Select a Package</h3>
-                        <form onSubmit={handleSignIn}>
-                            <input type="email" onChange={handleMail} placeholder="Your email address" />
-                            <input type="text" onChange={handleMail} placeholder="Your Fullname" />
-                            <input type="text" onChange={handleMail} placeholder="Your Username" />
-                            <input type="password" onChange={handlePassword} placeholder="Your password" />
-                            <button>Create account</button>
-                        </form>
-                        <footer>Already have an account ? <Link to="/signin">Sign in here</Link></footer>
+                        <div className="packages">
+                            <article className="package">
+                                <header>
+                                    <p className="title">STANDARD</p>
+                                    <h3 className="price">$150</h3>
+                                </header>
+                                <ul className="offers">
+                                    <li>Unlimited Movies</li>
+                                    <li>3 Devices</li>
+                                    <li>30days Free Trial</li>
+                                    <li></li>
+                                </ul>
+
+                                <button onClick={choosePackage}>CHOOSE</button>
+
+                            </article>
+                            <article className="package">
+                                <header>
+                                    <p className="title">PREMIUM</p>
+                                    <h3 className="price">$250</h3>
+                                </header>
+                                <ul className="offers">
+                                    <li>Unlimited Movies</li>
+                                    <li>Unlimited Devices</li>
+                                    <li>Unlimited Users</li>
+                                    <li>30days Free Trial</li>
+                                </ul>
+
+                                <button onClick={choosePackage}>CHOOSE</button>
+
+                            </article>
+                            
+                        </div>
                     </div>
-                </div>
-            </div>
+            
                 
         )
 

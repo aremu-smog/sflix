@@ -247,6 +247,74 @@ body {
 }
 
 /* Login form */
+.error-input {
+  border-bottom: 1px solid #FF0000 !important;
+}
+
+.progress-wrapper {
+  max-width: calc(400px + 6em);
+  margin: auto;
+  position: relative;
+  padding: 3em 0;
+  margin-top: -2em;
+}
+
+.progress-wrapper .progress {
+  position: absolute;
+  width: 100%;
+  background: #B2B2B2;
+  height: 2.5px;
+}
+
+.progress-wrapper .progress .progress-inner {
+  position: absolute;
+  width: 0%;
+  background: #FF0000;
+  height: 2.5px;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+}
+
+.progress-wrapper .steps {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  margin-top: -8px;
+}
+
+.progress-wrapper .steps span {
+  display: inline-block;
+  margin-left: 10em;
+  height: 15px;
+  width: 15px;
+  background: black;
+  border-radius: 50%;
+  border: 2px solid #B2B2B2;
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
+}
+
+.progress-wrapper .steps span:first-child {
+  margin-left: 4em;
+}
+
+.progress-wrapper .steps span:last-child {
+  margin-right: 4em;
+}
+
+.progress-wrapper .steps .active-step {
+  border-color: #FF0000;
+}
+
+.progress-wrapper .steps .done-step {
+  background: #FF0000 !important;
+}
+
 .login-area {
   background: black;
   height: 100vh;
@@ -277,6 +345,95 @@ body {
   margin-top: 1em;
 }
 
+.login-area .inner p {
+  font-family: "ProximaNova Thin";
+  color: #FF0000;
+  font-size: 14px;
+}
+
+.login-area .inner .packages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 3em;
+  width: 100%;
+}
+
+.login-area .inner .packages .package {
+  width: 100%;
+  text-align: center;
+}
+
+.login-area .inner .packages .package:nth-child(2) {
+  margin-left: 10px;
+}
+
+.login-area .inner .packages .package header {
+  padding: 5px 0;
+  background: #FF0000;
+  color: white !important;
+}
+
+.login-area .inner .packages .package header p {
+  color: white;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.login-area .inner .packages .package header h3 {
+  margin-top: 25px;
+}
+
+.login-area .inner .packages .package ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.login-area .inner .packages .package ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
+  border-bottom: 1px solid #B2B2B2;
+  font-family: "ProximaNova Thin";
+}
+
+.login-area .inner .packages .package ul li:last-child {
+  border-bottom: none;
+}
+
+.login-area .inner .packages .package button {
+  margin-top: -1em;
+}
+
+.login-area .inner .logos {
+  margin-top: 3em;
+}
+
+.login-area .inner .logos img {
+  opacity: 0.2;
+}
+
+.login-area .inner .card-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.login-area .inner .card-info input {
+  margin-left: 10px;
+}
+
+.login-area .inner .card-info input:first-child {
+  margin-left: 0;
+}
+
 .login-area .inner form {
   margin-top: -0.5em;
 }
@@ -304,6 +461,8 @@ body {
   font-family: 'ProximaNova Regular';
   margin-top: 2em;
   width: 100%;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .login-area .inner footer {

@@ -75,22 +75,18 @@ const BasicInfo = (props) =>{
     }else{
 
         return(
-            <div className="login-area">
-                <div className="wrapper">
-                    <div className="logo"><Link to="/"><img src="img/sflix.png" alt="SFLIX logo" width="120px" /></Link></div>
-                    <div className="inner">
+            
+                    <div >
                     <h3>Basic Information</h3>
                         <form onSubmit={handleSignIn}>
                             <input type="email" onChange={handleMail} placeholder="Your email address" />
                             <input type="text" onChange={handleMail} placeholder="Your Fullname" />
                             <input type="text" onChange={handleMail} placeholder="Your Username" />
                             <input type="password" onChange={handlePassword} placeholder="Your password" />
-                            <button>NEXT</button>
+                            <button>CONTINUE</button>
                         </form>
                         <footer>Already have an account ? <Link to="/signin">Sign in here</Link></footer>
                     </div>
-                </div>
-            </div>
                 
         )
 
