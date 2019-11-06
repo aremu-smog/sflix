@@ -104,15 +104,16 @@ body{
     }
 
     .landing-carousel{
-        width: 80%;
         margin: auto;
-        margin-top: 4em;
-        overflow: hidden;
+        margin-top: 2em;
         display: flex;
+        position: relative;
+    
 
         .item{
             position: absolute;
             transform: translateX(1000%);
+    
             // margin-left: 1em;
              $duration: 2s;
 
@@ -142,7 +143,6 @@ body{
                 animation: item-animation 24s linear infinite 21s;
                 
             }
-
 
         }
     }

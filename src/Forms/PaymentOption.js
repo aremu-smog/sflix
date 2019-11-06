@@ -155,7 +155,6 @@ const PaymentOption = (props) =>{
 
                             <div className="card-info">
                                 <input 
-                                
                                 type="text" onChange={handleDate}  
                                 maxlength="7" 
                                 placeholder="MM/YYYY"
