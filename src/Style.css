@@ -98,6 +98,10 @@ body {
   font-size: 3.5em;
 }
 
+.main-header a, .dashboard-header a {
+  text-decoration: none;
+}
+
 .main-header button, .dashboard-header button {
   background: #FF0000;
   border: none;
@@ -176,8 +180,8 @@ body {
 
 @-webkit-keyframes item-animation {
   0% {
-    -webkit-transform: translateX(1000%);
-            transform: translateX(1000%);
+    -webkit-transform: translateX(800%);
+            transform: translateX(800%);
   }
   100% {
     -webkit-transform: translateX(-450%);
@@ -187,8 +191,8 @@ body {
 
 @keyframes item-animation {
   0% {
-    -webkit-transform: translateX(1000%);
-            transform: translateX(1000%);
+    -webkit-transform: translateX(800%);
+            transform: translateX(800%);
   }
   100% {
     -webkit-transform: translateX(-450%);

@@ -93,6 +93,9 @@ body{
         font-family: 'ProximaNova Black';
         font-size: 3.5em;
     }
+    a{
+        text-decoration: none ;
+    }
     button{
         @include button();
         font-size: 14px !important;
@@ -157,7 +160,7 @@ body{
 
 @keyframes item-animation{
     0%{
-        transform: translateX(1000%);
+        transform: translateX(800%);
     }
     100%{
         transform: translateX(-450%);
