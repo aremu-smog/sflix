@@ -7,7 +7,7 @@ const Navbar = () =>{
     const [user] = useContext(UserContext)
     const [watchlist] = useContext(WatchlistContext)
 
-    if( user.isLoggedIn ){
+    if( !user.isLoggedIn ){
 
             return(
                 <nav className="navbar">
@@ -20,7 +20,7 @@ const Navbar = () =>{
                         
                         WATCHLIST
                         <span className="watchlist"><span>{watchlist.length}</span></span>
-                        <Link to="/home"><button>Log out</button></Link>
+                        <Link to="/home"><button>Sign out of your Account</button></Link>
                         </div>
         
                 </nav>
