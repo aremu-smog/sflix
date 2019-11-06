@@ -12,8 +12,11 @@ const Header = () =>{
                 <img src="img/posters/3.jpg" alt="" class="item" height="300px"/>
                 <img src="img/posters/4.jpg" alt="" class="item" height="300px"/>
                 <img src="img/posters/7.jpg" alt="" class="item" height="300px"/>
-                <img src="img/posters/8.jpg" alt="" class="item" height="300px"/>
                 <img src="img/posters/2.jpg" alt="" class="item" height="300px"/>
+                <img src="img/posters/8.jpg" alt="" class="item" height="300px"/>
+                <img src="img/posters/7.jpg" alt="" class="item" height="300px"/>
+                
+                
                 
             </div>
         </header>
