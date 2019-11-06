@@ -34,11 +34,11 @@ body{
     background: $red;
     border: none;
     outline: none;
-    padding: 0.8em 1.8em;
+    padding: 1em 2em;
     color: white;
     cursor: pointer;
     font-family: 'ProximaNova Regular';
-    text-transform: uppercase;
+    // text-transform: uppercase;
 } // end of @mixin button()
 
 .navbar{
@@ -87,16 +87,23 @@ body{
     background: black;
     text-align: center;
     color: white;
-    height: 100vh;
-    padding: 8em 2em 10em 2em;
+    padding: 4em 2em 0em 2em;
+    height: calc(100vh - 101px);
     h1{
         font-family: 'ProximaNova Black';
         font-size: 3.5em;
     }
+    a{
+        text-decoration: none;
+    }
     button{
         @include button();
-        font-size: '26px' !important;
-        margin-top: -1em;
+        font-size: 14px !important;
+        padding: 1em 3em;
+        letter-spacing: 1px;
+        display: block;
+        margin: auto;
+        margin-top: -2em;
     }
 
     .landing-carousel{
@@ -147,6 +154,7 @@ body{
 .dashboard-header {
     @extend .main-header ;
     height: auto;
+    padding-bottom: 8em;
 
 }
 
@@ -168,26 +176,26 @@ body{
     
     .movie{
         display: flex;
-        margin-top: 2em;
+        margin-top: 3em;
         .poster{
             background: $grey;
-            width: 500px;
+            width: 400px;
         
             display: inline-block;
 
         } // end of .poster
         .info{
-            max-width: 450px;
+            max-width: 350px;
             padding-left: 2em;
             display: inline-block;
             color: white;
             .title{
                 font-size: 1.5em;
-                font-family: 'ProximaNova Bold';
+                font-family: 'ProximaNova Black';
             }
             .description{
                 font-family: 'ProximaNova Thin';
-                line-height: '16px';
+                line-height: 24px !important;
             }
             button{
                 @include button();
@@ -199,7 +207,59 @@ body{
 
 
 /* Login form */
-
+.error-input{
+    border-bottom: 1px solid $red !important;
+}
+.progress-wrapper{
+    max-width: calc(400px + 6em);
+    margin: auto;
+    position: relative;
+    padding: 3em 0;
+    margin-top: -2em;
+    .progress{
+        position: absolute;
+        width: 100%;
+        background: $grey;
+        height: 2.5px;
+        .progress-inner  {
+            position: absolute;
+            width: 0%;
+            background: $red;
+            height: 2.5px;
+            transition: width 1s;
+        }
+    }
+    .steps{
+        position: absolute;
+        display: flex;
+       justify-content: space-between;
+       margin: auto;
+       margin-top: -8px;
+    
+        span{
+            display: inline-block;
+            margin-left: 10em;
+            height: 15px;
+            width: 15px;
+            background: black;
+            border-radius: 50%;
+            border: 2px solid $grey;
+            transition : all 1.2s;
+            &:first-child{
+                margin-left: 4em;
+            }
+            &:last-child{
+                margin-right: 4em;
+            }
+        }
+        .active-step{
+            border-color: $red;
+        }
+        .done-step{
+            background : $red !important;
+        }
+    }
+}
 .login-area{
     background: black;
     height: 100vh;
@@ -213,7 +273,7 @@ body{
     }
 
     .inner{
-        max-width: 450px;
+        max-width: 400px;
         margin: auto;
         background : $deepGrey;
         border-radius: 10px;
@@ -225,6 +285,71 @@ body{
             line-height: 0;
             font-family: "ProximaNova Regular";
             margin-top: 1em;
+        }
+        p{
+            font-family:"ProximaNova Thin";
+            color: $red;
+            font-size: 14px;
+        }
+        .packages{
+            display: flex;
+            margin-top: 3em;
+            width: 100%;
+            .package{
+                width: 100%;
+                text-align: center;
+                &:nth-child(2){
+                    margin-left: 10px;
+                }
+                header{
+                    padding: 5px 0;
+                    p{
+                        color: white;
+                        font-size: 12px;
+                        letter-spacing: 2px;
+                    }
+                    h3{
+                        margin-top: 25px;
+                    }
+                    
+                    background: $red;
+                    color: white !important;
+                }
+
+                ul {
+                    list-style-type: none;
+                    padding: 0;
+                    li{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;
+                        border-bottom: 1px solid $grey;
+                        font-family : "ProximaNova Thin";
+                        &:last-child{
+                            border-bottom: none;
+                        }
+                    }
+                }
+                button{
+                    margin-top: -1em;
+                }
+            }
+        }
+        .logos{
+            margin-top: 3em;
+            img{
+                opacity: 0.2;
+            }
+        }
+        .card-info{
+            display: flex;
+            input{
+                margin-left: 10px;
+                &:first-child{
+                    margin-left: 0;
+                }
+            }
         }
         form {
             margin-top: -0.5em;
@@ -241,10 +366,13 @@ body{
             margin-top: 1em;
             outline: none;
         }
+        
         button{
             @include button();
             margin-top: 2em;
             width: 100%;
+            font-size: 12px;
+            letter-spacing: 1px;
         }
 
         footer{

@@ -77,11 +77,10 @@ body {
   background: #FF0000;
   border: none;
   outline: none;
-  padding: 0.8em 1.8em;
+  padding: 1em 2em;
   color: white;
   cursor: pointer;
   font-family: 'ProximaNova Regular';
-  text-transform: uppercase;
   font-size: '14px';
   margin-left: 2em;
 }
@@ -90,8 +89,8 @@ body {
   background: black;
   text-align: center;
   color: white;
-  height: 100vh;
-  padding: 8em 2em 10em 2em;
+  padding: 4em 2em 0em 2em;
+  height: calc(100vh - 101px);
 }
 
 .main-header h1, .dashboard-header h1 {
@@ -99,17 +98,24 @@ body {
   font-size: 3.5em;
 }
 
+.main-header a, .dashboard-header a {
+  text-decoration: none;
+}
+
 .main-header button, .dashboard-header button {
   background: #FF0000;
   border: none;
   outline: none;
-  padding: 0.8em 1.8em;
+  padding: 1em 2em;
   color: white;
   cursor: pointer;
   font-family: 'ProximaNova Regular';
-  text-transform: uppercase;
-  font-size: '26px' !important;
-  margin-top: -1em;
+  font-size: 14px !important;
+  padding: 1em 3em;
+  letter-spacing: 1px;
+  display: block;
+  margin: auto;
+  margin-top: -2em;
 }
 
 .main-header .landing-carousel, .dashboard-header .landing-carousel {
@@ -169,6 +175,7 @@ body {
 
 .dashboard-header {
   height: auto;
+  padding-bottom: 8em;
 }
 
 @-webkit-keyframes item-animation {
@@ -212,17 +219,17 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 2em;
+  margin-top: 3em;
 }
 
 .movies .movie .poster {
   background: #B2B2B2;
-  width: 500px;
+  width: 400px;
   display: inline-block;
 }
 
 .movies .movie .info {
-  max-width: 450px;
+  max-width: 350px;
   padding-left: 2em;
   display: inline-block;
   color: white;
@@ -230,27 +237,94 @@ body {
 
 .movies .movie .info .title {
   font-size: 1.5em;
-  font-family: 'ProximaNova Bold';
+  font-family: 'ProximaNova Black';
 }
 
 .movies .movie .info .description {
   font-family: 'ProximaNova Thin';
-  line-height: '16px';
+  line-height: 24px !important;
 }
 
 .movies .movie .info button {
   background: #FF0000;
   border: none;
   outline: none;
-  padding: 0.8em 1.8em;
+  padding: 1em 2em;
   color: white;
   cursor: pointer;
   font-family: 'ProximaNova Regular';
-  text-transform: uppercase;
   margin-top: 1em;
 }
 
 /* Login form */
+.error-input {
+  border-bottom: 1px solid #FF0000 !important;
+}
+
+.progress-wrapper {
+  max-width: calc(400px + 6em);
+  margin: auto;
+  position: relative;
+  padding: 3em 0;
+  margin-top: -2em;
+}
+
+.progress-wrapper .progress {
+  position: absolute;
+  width: 100%;
+  background: #B2B2B2;
+  height: 2.5px;
+}
+
+.progress-wrapper .progress .progress-inner {
+  position: absolute;
+  width: 0%;
+  background: #FF0000;
+  height: 2.5px;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+}
+
+.progress-wrapper .steps {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  margin-top: -8px;
+}
+
+.progress-wrapper .steps span {
+  display: inline-block;
+  margin-left: 10em;
+  height: 15px;
+  width: 15px;
+  background: black;
+  border-radius: 50%;
+  border: 2px solid #B2B2B2;
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
+}
+
+.progress-wrapper .steps span:first-child {
+  margin-left: 4em;
+}
+
+.progress-wrapper .steps span:last-child {
+  margin-right: 4em;
+}
+
+.progress-wrapper .steps .active-step {
+  border-color: #FF0000;
+}
+
+.progress-wrapper .steps .done-step {
+  background: #FF0000 !important;
+}
+
 .login-area {
   background: black;
   height: 100vh;
@@ -265,7 +339,7 @@ body {
 }
 
 .login-area .inner {
-  max-width: 450px;
+  max-width: 400px;
   margin: auto;
   background: #070606;
   border-radius: 10px;
@@ -279,6 +353,95 @@ body {
   line-height: 0;
   font-family: "ProximaNova Regular";
   margin-top: 1em;
+}
+
+.login-area .inner p {
+  font-family: "ProximaNova Thin";
+  color: #FF0000;
+  font-size: 14px;
+}
+
+.login-area .inner .packages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 3em;
+  width: 100%;
+}
+
+.login-area .inner .packages .package {
+  width: 100%;
+  text-align: center;
+}
+
+.login-area .inner .packages .package:nth-child(2) {
+  margin-left: 10px;
+}
+
+.login-area .inner .packages .package header {
+  padding: 5px 0;
+  background: #FF0000;
+  color: white !important;
+}
+
+.login-area .inner .packages .package header p {
+  color: white;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.login-area .inner .packages .package header h3 {
+  margin-top: 25px;
+}
+
+.login-area .inner .packages .package ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.login-area .inner .packages .package ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
+  border-bottom: 1px solid #B2B2B2;
+  font-family: "ProximaNova Thin";
+}
+
+.login-area .inner .packages .package ul li:last-child {
+  border-bottom: none;
+}
+
+.login-area .inner .packages .package button {
+  margin-top: -1em;
+}
+
+.login-area .inner .logos {
+  margin-top: 3em;
+}
+
+.login-area .inner .logos img {
+  opacity: 0.2;
+}
+
+.login-area .inner .card-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.login-area .inner .card-info input {
+  margin-left: 10px;
+}
+
+.login-area .inner .card-info input:first-child {
+  margin-left: 0;
 }
 
 .login-area .inner form {
@@ -302,13 +465,14 @@ body {
   background: #FF0000;
   border: none;
   outline: none;
-  padding: 0.8em 1.8em;
+  padding: 1em 2em;
   color: white;
   cursor: pointer;
   font-family: 'ProximaNova Regular';
-  text-transform: uppercase;
   margin-top: 2em;
   width: 100%;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .login-area .inner footer {
