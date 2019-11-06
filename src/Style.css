@@ -173,6 +173,38 @@ body {
           animation: item-animation 24s linear infinite 21s;
 }
 
+.loader span {
+  height: 7px;
+  width: 7px;
+  display: inline-block;
+  border-radius: 50%;
+  background: white;
+  -webkit-animation: loader 1s linear infinite;
+          animation: loader 1s linear infinite;
+}
+
+.loader span:nth-child(2) {
+  margin: 0 1em;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    opacity: 10%;
+  }
+  100% {
+    opacity: 60%;
+  }
+}
+
+@keyframes loader {
+  0% {
+    opacity: 10%;
+  }
+  100% {
+    opacity: 60%;
+  }
+}
+
 .dashboard-header {
   height: auto;
   padding-bottom: 8em;

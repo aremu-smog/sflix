@@ -1,6 +1,7 @@
 import React,{useState, useContext} from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import {UserContext} from '../Contexts/UserContext'
+import Loader from './Loader'
 import axios from 'axios'
 
 
@@ -13,25 +14,38 @@ const BasicInfo = (props) =>{
     const [signup, setSignup] = props.value
     const [user, setUser] = useContext(UserContext)
 
-    const [formMail, setFormMail] = useState({value : ""})
-    const [formPassword, setFormPassword] = useState({value : ""})
+    const [email, setEmail] = useState({value : ""})
+    const [fullname, setFullname] = useState({value : ""})
+    const [password, setPassword] = useState({value : ""})
+    const [userName, setUserName] = useState({value: ""})
+    const [isLoading, setIsLoading] = useState({status : true})
 
+    
 
     const handleMail = (e) => {
-        setFormMail({
-            value : e.target.value
-        })
+        setEmail({ value : e.target.value })
     }
+
+    const handleFullname = (e) => {
+        setFullname({ value: e.target.value })
+    }
+
+    const handleUsername = (e) => {
+        setUserName({ value : e.target.value  })
+    }
+
     const handlePassword = (e) => {
-        setFormPassword({
-            value : e.target.value
-        })
+        setPassword({ value : e.target.value })
     }
     const handleSignIn = (e) => {
 
-        setSignup({
-            step : signup.step + 1
+        setIsLoading({
+            status: true
         })
+
+        // setSignup({
+        //     step : signup.step + 1
+        // })
 
         // alert("Ready to sign in")
         // axios.get("https://jsonplaceholder.typicode.com/users")
@@ -80,10 +94,10 @@ const BasicInfo = (props) =>{
                     <h3>Basic Information</h3>
                         <form onSubmit={handleSignIn}>
                             <input type="email" onChange={handleMail} placeholder="Your email address" />
-                            <input type="text" onChange={handleMail} placeholder="Your Fullname" />
-                            <input type="text" onChange={handleMail} placeholder="Your Username" />
+                            <input type="text" onChange={handleFullname} placeholder="Your Fullname" />
+                            <input type="text" onChange={handleUsername} placeholder="Your Username" />
                             <input type="password" onChange={handlePassword} placeholder="Your password" />
-                            <button>CONTINUE</button>
+                            <button>{ isLoading.status === false ? "CONTINUE" : <Loader />}</button>
                         </form>
                         <footer>Already have an account ? <Link to="/signin">Sign in here</Link></footer>
                     </div>

@@ -151,6 +151,29 @@ body{
     }
 }
 
+.loader{
+    span{
+        height: 7px;
+        width: 7px;
+        display: inline-block;
+        border-radius: 50%;
+        background: white;
+        animation: loader 1s linear infinite;
+        &:nth-child(2){
+            margin: 0 1em;
+        }
+    }
+}
+
+@keyframes loader{
+    0%{
+        opacity: 10%;
+    }
+    100%{
+        opacity: 60%;
+    }
+}
+
 .dashboard-header {
     @extend .main-header ;
     height: auto;
