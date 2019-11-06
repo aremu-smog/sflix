@@ -115,52 +115,58 @@ body {
 }
 
 .main-header .landing-carousel, .dashboard-header .landing-carousel {
-  width: 80%;
   margin: auto;
-  margin-top: 4em;
-  overflow: hidden;
+  margin-top: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 .main-header .landing-carousel .item, .dashboard-header .landing-carousel .item {
   position: absolute;
+  -webkit-transform: translateX(1000%);
+          transform: translateX(1000%);
 }
 
 .main-header .landing-carousel .item:first-child, .dashboard-header .landing-carousel .item:first-child {
-  -webkit-animation: item-animation 25s linear infinite;
-          animation: item-animation 25s linear infinite;
+  -webkit-animation: item-animation 24s linear infinite;
+          animation: item-animation 24s linear infinite;
 }
 
 .main-header .landing-carousel .item:nth-child(2), .dashboard-header .landing-carousel .item:nth-child(2) {
-  -webkit-animation: item-animation 25s linear infinite 3s;
-          animation: item-animation 25s linear infinite 3s;
+  -webkit-animation: item-animation 24s linear infinite 3s;
+          animation: item-animation 24s linear infinite 3s;
 }
 
 .main-header .landing-carousel .item:nth-child(3), .dashboard-header .landing-carousel .item:nth-child(3) {
-  -webkit-animation: item-animation 25s linear infinite 6s;
-          animation: item-animation 25s linear infinite 6s;
+  -webkit-animation: item-animation 24s linear infinite 6s;
+          animation: item-animation 24s linear infinite 6s;
 }
 
 .main-header .landing-carousel .item:nth-child(4), .dashboard-header .landing-carousel .item:nth-child(4) {
-  -webkit-animation: item-animation 25s linear infinite 9s;
-          animation: item-animation 25s linear infinite 9s;
+  -webkit-animation: item-animation 24s linear infinite 9s;
+          animation: item-animation 24s linear infinite 9s;
 }
 
 .main-header .landing-carousel .item:nth-child(5), .dashboard-header .landing-carousel .item:nth-child(5) {
-  -webkit-animation: item-animation 25s linear infinite 12s;
-          animation: item-animation 25s linear infinite 12s;
+  -webkit-animation: item-animation 24s linear infinite 12s;
+          animation: item-animation 24s linear infinite 12s;
 }
 
 .main-header .landing-carousel .item:nth-child(6), .dashboard-header .landing-carousel .item:nth-child(6) {
-  -webkit-animation: item-animation 25s linear infinite 15s;
-          animation: item-animation 25s linear infinite 15s;
+  -webkit-animation: item-animation 24s linear infinite 15s;
+          animation: item-animation 24s linear infinite 15s;
 }
 
-.main-header .landing-carousel .item:last-child, .dashboard-header .landing-carousel .item:last-child {
-  -webkit-animation: item-animation 25s linear infinite 18s;
-          animation: item-animation 25s linear infinite 18s;
+.main-header .landing-carousel .item:nth-child(7), .dashboard-header .landing-carousel .item:nth-child(7) {
+  -webkit-animation: item-animation 24s linear infinite 18s;
+          animation: item-animation 24s linear infinite 18s;
+}
+
+.main-header .landing-carousel .item:nth-child(8), .dashboard-header .landing-carousel .item:nth-child(8) {
+  -webkit-animation: item-animation 24s linear infinite 21s;
+          animation: item-animation 24s linear infinite 21s;
 }
 
 .dashboard-header {
@@ -170,8 +176,8 @@ body {
 
 @-webkit-keyframes item-animation {
   0% {
-    -webkit-transform: translateX(700%);
-            transform: translateX(700%);
+    -webkit-transform: translateX(1000%);
+            transform: translateX(1000%);
   }
   100% {
     -webkit-transform: translateX(-450%);
@@ -181,8 +187,8 @@ body {
 
 @keyframes item-animation {
   0% {
-    -webkit-transform: translateX(700%);
-            transform: translateX(700%);
+    -webkit-transform: translateX(1000%);
+            transform: translateX(1000%);
   }
   100% {
     -webkit-transform: translateX(-450%);
