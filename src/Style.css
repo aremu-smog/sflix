@@ -179,29 +179,50 @@ body {
   display: inline-block;
   border-radius: 50%;
   background: white;
-  -webkit-animation: loader 1s linear infinite;
-          animation: loader 1s linear infinite;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-animation: loader 2s linear infinite;
+          animation: loader 2s linear infinite;
+}
+
+.loader span:nth-child(3) {
+  -webkit-animation: loader 2s linear infinite 1.33;
+          animation: loader 2s linear infinite 1.33;
 }
 
 .loader span:nth-child(2) {
+  -webkit-animation: loader 2s linear infinite 0.67s;
+          animation: loader 2s linear infinite 0.67s;
   margin: 0 1em;
 }
 
 @-webkit-keyframes loader {
   0% {
-    opacity: 10%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
   100% {
-    opacity: 60%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes loader {
   0% {
-    opacity: 10%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
   100% {
-    opacity: 60%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 

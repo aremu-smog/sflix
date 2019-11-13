@@ -2,7 +2,7 @@ import React,{useState, useContext} from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import {UserContext} from '../Contexts/UserContext'
 import axios from 'axios'
-
+import Loader from './Loader'
 
 
 
@@ -18,6 +18,7 @@ const PaymentOption = (props) =>{
     const [cardDate, setCardDate] = useState({value : ""})
     const [cardCvv, setCardCvv] = useState({value : ""})
     const [cardPin, setCardPin] = useState({value : ""})
+    const [isLoading, setIsLoading] = useState({status : false})
 
     const isANumber = (val) =>{
         let pattern = /[0-9]/
@@ -83,45 +84,32 @@ const PaymentOption = (props) =>{
         }
     }
     
-    const handleSignIn = (e) => {
+    const handleSignup = (e) => {
 
-        setSignup({
-            step : signup.step + 1
+        setIsLoading({
+            status: true
         })
-
-        // alert("Ready to sign in")
-        // axios.get("https://jsonplaceholder.typicode.com/users")
+        axios.post(`https://my-json-server.typicode.com/aremu-smog/JP/users`, {user})
+        .then(res => {
+            console.log(res.data)
+        })
+        
+        // console.log(user)
+        // axios.get("https://my-json-server.typicode.com/aremu-smog/JP/users")
         // .then(res => {
-        //     const users = res.data
-
-        //     const theUser = users.filter( user => {
-        //         return(
-        //             user.email === formMail.value
-        //         )
+        //     console.log(res.json())
+        //     setSignup({
+        //         step : signup.step + 1
         //     })
 
-        //     if(theUser.length === 0){
-        //         alert("No user found")
-        //     }else{
-        //         if(formMail.value === users[0].email && formPassword.value === users[0].username){
-        //             alert("User can now login")
-    
-        //         setUser({
-        //             isLoggedIn : true
-        //         })
-    
-        //     }else{
-        //         alert("Ogbeni, kamdan")
-        //     }
-               
-        //     }
-
-             
         // })
-        // .catch(error =>   alert("Couldn't load resource") )
+        // .catch(error => {
+        //     console.log("You are offline")
+        //     setIsLoading({ status: false })
+        // })
     
         
-        // e.preventDefault()
+        e.preventDefault()
 
     }
 
@@ -143,7 +131,7 @@ const PaymentOption = (props) =>{
                         <img style={{opacity : cardType.value === "verve" ? "0.8":""}} src="img/form/verve.png" alt="verve logo" height="60px" />
                         <img style={{opacity : cardType.value === "mastercard" ? "0.8":""}} src="img/form/mastercard.png" alt="mastercard logo" height="60px" />
                     </div>
-                        <form onSubmit={handleSignIn}>
+                        <form onSubmit={handleSignup}>
                             
                             <input 
                             type="text"
@@ -156,7 +144,7 @@ const PaymentOption = (props) =>{
                             <div className="card-info">
                                 <input 
                                 type="text" onChange={handleDate}  
-                                maxlength="7" 
+                                maxLength="7" 
                                 placeholder="MM/YYYY"
                                 />
                                 <input
@@ -172,7 +160,7 @@ const PaymentOption = (props) =>{
                                 maxLength="4"
                                 placeholder="PIN" />
                             </div>
-                            <button>PROCEED</button>
+                            <button>{ isLoading.status === false ? "PROCEED" : <Loader />}</button>
                         </form>
                         <footer>Already have an account ? <Link to="/signin">Sign in here</Link></footer>
                     </div>

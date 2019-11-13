@@ -12,48 +12,23 @@ const SelectPackage = (props) =>{
     
     const [signup, setSignup] = props.value
     const [user, setUser] = useContext(UserContext)
+    const [isLoading, setIsLoading] = useState({status : false})
 
 
     
-    const choosePackage = (e) => {
+    const choosePackage = (option) => {
 
+        setUser( prevState => {
+            return (
+                {...prevState, subscription : {
+                    package : option
+                } }
+            )
+        })
         setSignup({
             step : signup.step + 1
         })
 
-        // alert("Ready to sign in")
-        // axios.get("https://jsonplaceholder.typicode.com/users")
-        // .then(res => {
-        //     const users = res.data
-
-        //     const theUser = users.filter( user => {
-        //         return(
-        //             user.email === formMail.value
-        //         )
-        //     })
-
-        //     if(theUser.length === 0){
-        //         alert("No user found")
-        //     }else{
-        //         if(formMail.value === users[0].email && formPassword.value === users[0].username){
-        //             alert("User can now login")
-    
-        //         setUser({
-        //             isLoggedIn : true
-        //         })
-    
-        //     }else{
-        //         alert("Ogbeni, kamdan")
-        //     }
-               
-        //     }
-
-             
-        // })
-        // .catch(error =>   alert("Couldn't load resource") )
-    
-        
-        // e.preventDefault()
 
     }
 
@@ -79,7 +54,7 @@ const SelectPackage = (props) =>{
                                     <li></li>
                                 </ul>
 
-                                <button onClick={choosePackage}>CHOOSE</button>
+                                <button onClick={() => choosePackage("Standard")}>CHOOSE</button>
 
                             </article>
                             <article className="package">
@@ -94,7 +69,7 @@ const SelectPackage = (props) =>{
                                     <li>30days Free Trial</li>
                                 </ul>
 
-                                <button onClick={choosePackage}>CHOOSE</button>
+                                <button onClick={() => choosePackage("Premium")}>CHOOSE</button>
 
                             </article>
                             
