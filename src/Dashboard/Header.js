@@ -7,7 +7,7 @@ const Header = () =>{
 
     return(
         <header className="dashboard-header">
-            <h1>Welcome back, {user.firstname}</h1>
+            <h1>Welcome back, {user["fullname"]}</h1>
                 
         </header>
     )

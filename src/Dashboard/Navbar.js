@@ -20,7 +20,7 @@ const Navbar = () =>{
                         
                         WATCHLIST
                         <span className="watchlist"><span>{watchlist.length}</span></span>
-                        <Link to="/home"><button>Sign out of your Account</button></Link>
+                        <Link to="/"><button>Sign out of your Account</button></Link>
                         </div>
         
                 </nav>

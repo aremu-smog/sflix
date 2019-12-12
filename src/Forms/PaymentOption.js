@@ -90,7 +90,7 @@ const PaymentOption = (props) =>{
             status: true
         })
         // alert(user)
-        axios.post('https://jsonplaceholder.typicode.com/users',{user})
+        axios.post('https://my-json-server.typicode.com/aremu-smog/JP/users',{user})
         .then(response => {
             setSignup({
                 step: signup.step + 1

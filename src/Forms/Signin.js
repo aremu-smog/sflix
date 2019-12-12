@@ -29,8 +29,8 @@ const Signin = () =>{
     }
     const handleSignIn = (e) => {
 
-        alert("Ready to sign in")
-        axios.get("https://jsonplaceholder.typicode.com/users")
+        // alert("Ready to sign in")
+        axios.get("https://my-json-server.typicode.com/aremu-smog/JP/users")
         .then(res => {
             const users = res.data
 
@@ -43,15 +43,17 @@ const Signin = () =>{
             if(theUser.length === 0){
                 alert("No user found")
             }else{
-                if(formMail.value === users[0].email && formPassword.value === users[0].username){
+                if(formMail.value === users[0].email && formPassword.value === users[0].password){
                     alert("User can now login")
     
                 setUser({
+                    fullname : users[0].fullname,
                     isLoggedIn : true
                 })
     
             }else{
-                alert("Ogbeni, kamdan")
+                alert(formPassword.value)
+                // alert("Ogbeni, kamdan")
             }
                
             }
