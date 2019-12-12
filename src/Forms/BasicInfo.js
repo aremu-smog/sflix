@@ -36,7 +36,8 @@ const BasicInfo = (props) =>{
     }
 
     const handlePassword = (e) => {
-        setPassword({ value : MD5(e.target.value) })
+        setPassword({value: e.target.value})
+        // setPassword({ value : MD5(e.target.value) })
     }
 
 

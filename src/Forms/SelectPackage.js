@@ -18,6 +18,14 @@ const SelectPackage = (props) =>{
     
     const choosePackage = (option) => {
 
+        // axios.get('https://jsonplaceholder.typicode.com/users/1')
+        // .then(response => console.log(response))
+        // .catch(response => alert("Something worng"))
+
+        // axios.post('https://jsonplaceholder.typicode.com/users',{user})
+        // .then(response => console.log(response))
+        // .catch(response => alert("Something worng"))
+
         setUser( prevState => {
             return (
                 {...prevState, subscription : {

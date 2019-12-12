@@ -89,10 +89,18 @@ const PaymentOption = (props) =>{
         setIsLoading({
             status: true
         })
-        axios.post(`https://my-json-server.typicode.com/aremu-smog/JP/users`, {user})
-        .then(res => {
-            console.log(res.data)
+        // alert(user)
+        axios.post('https://jsonplaceholder.typicode.com/users',{user})
+        .then(response => {
+            setSignup({
+                step: signup.step + 1
+            })
         })
+        .catch(response => alert("Something worng"))
+        // axios.put(`https://my-json-server.typicode.com/aremu-smog/JP/users`, {user})
+        // .then(res => {
+        //     console.log(res.data)
+        // }).catch( res => console.log("Something went wrong!"))
         
         // console.log(user)
         // axios.get("https://my-json-server.typicode.com/aremu-smog/JP/users")
